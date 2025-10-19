@@ -2,98 +2,74 @@
 <html lang="nl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ASAS Fysiotherapie | Pijnvrij bewegen, sterk terugkomen</title>
   <meta name="description" content="ASAS Fysiotherapie — evidence-based, resultaatgericht. Diagnose, behandelplan en coaching. Online afspraak inplannen." />
   <meta name="theme-color" content="#0f2a3a"/>
 
+  <!-- Favicon / PWA -->
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16.png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="manifest" href="/assets/site.webmanifest">
 
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><defs><pattern id='p' width='12' height='12' patternUnits='userSpaceOnUse'><path d='M0 6 Q3 0 6 6 T12 6 M6 0 Q0 3 6 6 T6 12' fill='none' stroke='%23d4b259' stroke-width='1.4' stroke-linecap='round'/></pattern></defs><path d='M48 6c18 0 33 15 33 33v45H15V39C15 21 30 6 48 6Z' fill='url(%23p)'/><path d='M48 6c18 0 33 15 33 33v45H15V39C15 21 30 6 48 6Z' fill='none' stroke='%230f2a3a' stroke-width='6'/><circle cx='48' cy='30' r='7' fill='%230f2a3a'/><path d='M53 35c-8 3-13 13-17 26l10-7 4 9c5-10 8-17 15-24l-12-4Z' fill='%230f2a3a'/></svg>">
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABjUlEQVR4nO3b0U3DMBQF4F8o8GZZAnbEwRGZgAbmCNr8EjjIxSg4Z1K0WZ3pQeSRuVnVz2WwI4/1cz+yyiDkLIAAAAAAAAAAAAzPRwZw3rJ1x3qrbqZgH1czxwC7T2AKqvcs5Wl6i9nSnbz7HcHsa9EMdfMDeBQvgZa+Oos2xM0G2aKnoCJxKfKFWC5aYWulfgHMsLPsAt0Qw31PhvvfTZ7H7CD8pY1mEEJMoTMeBjZqBi2khpDYIfRuMV4oFK7nTW1oMVeWOPubWmZ8f8O2ArM7AVmsp2U+ICpv6AYkxYBqHZ+wRao0CBi1z0nAxYkIY9M8fUoUgWL1rEOBh0kYfaWYgYcKcNqW8mYbq20HC8x9TD8EKg9G4n20bWn2v17Z44PAUzMX1YGuQdUWe4fivZBamsoXbtv3gHH+Oe2Iql0zJZC8I2YrQ2Jf44DrQmukxmpT7h0PGvmuWyH7ogEAAAAAAAAAAODa4w+g4QH48a8JxgAAAABJRU5ErkJggg==">
-
- 
-  <meta property="og:title" content="ASAS Fysiotherapie"/>
-  <meta property="og:description" content="Pijnvrij bewegen, sterk terugkomen. Evidence-based fysiotherapie."/>
-  <meta property="og:image" content="https://example.com/assets/og-asas.png"/>
+  <!-- Open Graph -->
+  <meta property="og:title" content="ASAS Fysiotherapie">
+  <meta property="og:description" content="Pijnvrij bewegen, sterk terugkomen. Evidence-based fysiotherapie.">
+  <meta property="og:image" content="https://f56tstvscs-ui.github.io/Fysioasas.nl/assets/og-asas.png">
+  <meta property="og:type" content="website">
 
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* ASAS merkkleuren – warm met meer goud */
-      --navy: #0f2a3a;   /* diep marineblauw */
-      --gold: #d4b259;   /* warm goud */
-      --bg:   #f9f8f5;   /* warme off-white */
-      --ink: var(--navy);
-      --muted: #5b6673;
-      --surface: #ffffff;
-      --ring: rgba(15,23,32,.10);
-      --accent: var(--gold);
-      --accent-2: var(--navy);
-      --pulse-dur: 5s;
-      --shimmer-dur: 3.5s;
+      --navy:#0f2a3a; --gold:#d4b259; --bg:#f9f8f5;
+      --ink:var(--navy); --muted:#5b6673; --surface:#fff; --ring:rgba(15,23,32,.10);
+      --accent:var(--gold); --accent-2:var(--navy);
+      --pulse-dur:5s; --shimmer-dur:3.5s;
     }
-
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    *{box-sizing:border-box} html,body{height:100%}
     body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;color:var(--ink);background:var(--bg);line-height:1.6}
-    a{color:inherit;text-decoration:none}
+    a{text-decoration:none;color:inherit}
     .container{width:min(1120px,92%);margin:0 auto}
 
-    /* Globale Damascus achtergrond (heel subtiel) + warme wash */
+    /* Subtiele globale texture + wash */
     .bg-damascus{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.06}
     .wash{position:fixed;inset:0;z-index:-1;pointer-events:none;background:
       radial-gradient(900px 500px at 85% -10%, rgba(212,178,89,.16), transparent 60%),
-      radial-gradient(800px 400px at 10% 120%, rgba(15,42,58,.10), transparent 60%);
-    }
+      radial-gradient(800px 400px at 10% 120%, rgba(15,42,58,.10), transparent 60%)}
 
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.8);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;align-items:center;gap:.7rem;font-weight:800;letter-spacing:.2px}
-    .logo-wrap{display:grid;place-items:center;width:36px;height:36px;border-radius:10px;background:#fff;border:1px solid var(--ring);box-shadow:0 6px 16px rgba(212,178,89,.25)}
-    .nav-links{display:flex;gap:1rem;align-items:center}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--ring)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:800}
+    .logo-wrap{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:#fff;border:1px solid var(--ring);box-shadow:0 6px 16px rgba(212,178,89,.25)}
+    .nav-links{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
     .nav-links a:hover{color:var(--gold)}
 
-    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.7rem 1rem;border-radius:12px;background:var(--accent);color:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 8px 18px rgba(212,178,89,.35);font-weight:700;transition:.25s;position:relative;overflow:hidden}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.72rem 1rem;border-radius:12px;background:var(--accent);color:#fff;border:1px solid rgba(0,0,0,.06);box-shadow:0 8px 18px rgba(212,178,89,.35);font-weight:700;transition:.25s;position:relative;overflow:hidden}
     .btn:hover{background:var(--navy);color:var(--gold);box-shadow:0 12px 26px rgba(212,178,89,.45)}
     /* Shimmer alleen op hover */
-    .btn::after{
-      content:""; position:absolute; inset:-20% -40%; pointer-events:none;
-      background: linear-gradient(105deg, transparent 0%, rgba(255,255,255,.0) 35%, rgba(241,218,147,.55) 50%, rgba(255,255,255,.0) 65%, transparent 100%);
-      transform: translateX(-150%); opacity:0; filter: blur(.6px);
-    }
-    .btn:hover::after{ opacity:1; animation: shimmer var(--shimmer-dur) ease-in-out forwards }
-    @keyframes shimmer{ to{ transform: translateX(150%) } }
-
+    .btn::after{content:"";position:absolute;inset:-20% -40%;pointer-events:none;background:linear-gradient(105deg,transparent 0%,rgba(255,255,255,.0) 35%,rgba(241,218,147,.55) 50%,rgba(255,255,255,.0) 65%,transparent 100%);transform:translateX(-150%);opacity:0;filter:blur(.6px)}
+    .btn:hover::after{opacity:1;animation:shimmer var(--shimmer-dur) ease-in-out forwards}
+    @keyframes shimmer{to{transform:translateX(150%)}}
     .btn.secondary{background:#fff;color:var(--navy);border:1px solid var(--ring);box-shadow:none}
 
-    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:64px 0 40px;position:relative;overflow:hidden}
-    .hero h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.06;margin:0 0 12px;position:relative}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center;padding:56px 0 40px;position:relative;overflow:hidden}
+    .hero h1{font-size:clamp(1.9rem,5.6vw,3.2rem);line-height:1.06;margin:0 0 12px;position:relative}
     .hero h1::after{content:"";display:block;width:96px;height:4px;margin-top:10px;background:linear-gradient(90deg,var(--gold),rgba(212,178,89,.25));border-radius:3px;opacity:.35}
     .hero p{color:var(--muted);margin:0 0 22px}
 
-    /* Hero-card met overlay + blur voor leesbaarheid */
-    .hero-card{
-      position: relative;
-      background: rgba(255,255,255,0.85);
-      border: 1px solid rgba(212,178,89,0.25);
-      border-radius: 18px;
-      padding: 20px;
-      box-shadow: 0 16px 40px rgba(2,6,23,.06);
-      backdrop-filter: blur(8px);
-    }
-    .hero-card::before{
-      content:"";
-      position:absolute; inset:0; border-radius:inherit; z-index:0;
-      background: linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.7), rgba(255,255,255,0.55));
-    }
-    .hero-card *{ position:relative; z-index:1 }
+    /* Leesbare hero-card */
+    .hero-card{position:relative;background:rgba(255,255,255,0.86);border:1px solid rgba(212,178,89,0.25);border-radius:18px;padding:18px;box-shadow:0 16px 40px rgba(2,6,23,.06);backdrop-filter:blur(8px)}
+    .hero-card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:linear-gradient(90deg,rgba(255,255,255,.95),rgba(255,255,255,.7),rgba(255,255,255,.55));z-index:0}
+    .hero-card *{position:relative;z-index:1}
 
     .ticker{display:flex;gap:.5rem;flex-wrap:wrap}
-    .chip{padding:.45rem .7rem;border:1px solid var(--gold);border-radius:999px;background:rgba(212,178,89,.10);color:var(--navy)}
+    .chip{padding:.52rem .75rem;border:1px solid var(--gold);border-radius:999px;background:rgba(212,178,89,.10);color:var(--navy)}
 
-    section{padding:56px 0}
+    section{padding:52px 0}
     .section-title{font-size:clamp(1.25rem,3vw,2rem);margin:0 0 8px;position:relative}
     .section-title::after{content:"";display:block;width:72px;height:3px;margin-top:10px;background:linear-gradient(90deg,var(--gold),rgba(212,178,89,.25));border-radius:2px;opacity:.35}
     .section-sub{color:var(--muted);margin:0 0 22px}
@@ -115,26 +91,33 @@
     footer{background:var(--navy);color:rgba(255,255,255,.86);border-top:none;padding:40px 0 60px;margin-top:40px}
     footer a{color:var(--gold)}
 
-    /* Hero arch (Damascus-raam): zachter + hover-boost */
-    .arch-bg{position:absolute;right:-80px;top:-40px;width:520px;height:auto;opacity:.28;transition:opacity .4s ease}
-    .hero:hover .arch-bg{opacity:.35}
+    /* Damascus-raam rechts — zachter + ver naar rechts op mobiel */
+    .arch-bg{position:absolute;right:-80px;top:-40px;width:520px;height:auto;opacity:.26;transition:opacity .4s ease}
+    .hero:hover .arch-bg{opacity:.33}
     .arch-bg .fill{fill:url(#mashrabiya)}
     .arch-bg .stroke{fill:none;stroke:var(--navy);stroke-width:18}
 
-    /* Golden Pulse — alleen bij hover/scroll (discreet) */
-    .section-title.inview::after, .hero h1.inview::after{ animation: pulseGrad var(--pulse-dur) ease-in-out infinite }
-    @keyframes pulseGrad{ 0%,100%{opacity:.35} 50%{opacity:.9} }
+    /* Discrete “pulse” alleen bij hover/scroll */
+    .section-title.inview::after, .hero h1.inview::after{animation:pulseGrad var(--pulse-dur) ease-in-out infinite}
+    @keyframes pulseGrad{0%,100%{opacity:.35}50%{opacity:.9}}
 
-    @media (max-width: 900px){
-      .hero{grid-template-columns:1fr}
+    /* Mobile polish */
+    @media (max-width:900px){
+      .nav{padding:10px 0}
+      .nav-links{gap:.75rem}
+      .btn{padding:.64rem .9rem}
+      .hero{grid-template-columns:1fr;gap:1.25rem;padding:38px 0 28px}
+      .hero h1{font-size:clamp(1.8rem,7vw,2.4rem)}
+      .hero p{font-size:1rem}
+      .hero-card{margin-top:.5rem}
       .grid-3,.grid-4{grid-template-columns:1fr}
-      .arch-bg{right:-120px;top:40px;width:420px;opacity:.20}
+      .arch-bg{right:-180px;top:20px;width:420px;opacity:.18}
     }
   </style>
 </head>
 <body>
- 
-  <svg class="bg-damascus" xmlns="http://www.w3.org/2000/svg">
+  <!-- subtiele pagina-texture -->
+  <svg class="bg-damascus" xmlns="http://www.w3.org/2000/svg" role="presentation" aria-hidden="true">
     <defs>
       <pattern id="damascus" width="48" height="48" patternUnits="userSpaceOnUse">
         <g fill="none" stroke="#0f2a3a" stroke-opacity=".18" stroke-width="1">
@@ -154,7 +137,8 @@
     <div class="container nav">
       <div class="brand">
         <div class="logo-wrap" title="ASAS logo">
-          <img id="logoImg" alt="ASAS Fysiotherapie" style="display:block;width:28px;height:auto;border-radius:8px"/>
+          <!-- Vast logo: vervang pad indien nodig -->
+          <img id="logoImg" src="/assets/logo-asas.png" alt="ASAS Fysiotherapie" style="display:block;width:28px;height:auto;border-radius:8px"/>
         </div>
         <a href="#">ASAS Fysiotherapie</a>
       </div>
@@ -166,17 +150,11 @@
         <a class="btn" href="#contact">Afspraak maken</a>
       </nav>
     </div>
-
-    <div class="container" style="display:flex;gap:.5rem;align-items:center;padding:6px 0 10px">
-      <button id="setLogoBtn" class="btn secondary" type="button" style="padding:.4rem .7rem;border-radius:8px">Logo uploaden (preview)</button>
-      <input id="logoFile" type="file" accept="image/*" style="display:none" />
-      <small class="section-sub">In productie: vervang de <code>src</code> van <code>#logoImg</code> door je asset-URL.</small>
-    </div>
   </header>
 
   <main class="container">
     <section class="hero">
-    
+      <!-- Arch raam rechts -->
       <svg aria-hidden="true" class="arch-bg" viewBox="0 0 600 700">
         <defs>
           <pattern id="mashrabiya" width="40" height="40" patternUnits="userSpaceOnUse">
@@ -306,51 +284,19 @@
     // Demo form
     function handleSubmit(e){
       e.preventDefault();
-      const status = document.getElementById('status');
-      status.textContent = 'Verstuurd! (demo)';
+      document.getElementById('status').textContent = 'Verstuurd! (demo)';
       e.target.reset();
       return false;
     }
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Golden Pulse scroll-activatie
+    // Golden Pulse activatie bij scroll (discreet)
     (function(){
       const io = new IntersectionObserver((entries)=>{
-        entries.forEach(e=>{
-          if(e.isIntersecting){ e.target.classList.add('inview'); }
-          else { e.target.classList.remove('inview'); }
-        });
+        entries.forEach(e=> e.target.classList.toggle('inview', e.isIntersecting));
       }, {threshold: 0.35});
       document.querySelectorAll('.section-title, .hero h1, .hero').forEach(el=> io.observe(el));
     })();
-
-    // Preview-logo upload + persist
-    const logoImg = document.getElementById('logoImg');
-    const setLogoBtn = document.getElementById('setLogoBtn');
-    const logoFile = document.getElementById('logoFile');
-    const saved = localStorage.getItem('asas_logo_datauri');
-    if (saved) { logoImg.src = saved; }
-    if (setLogoBtn) {
-      setLogoBtn.addEventListener('click', ()=> logoFile.click());
-      logoFile.addEventListener('change', (e)=>{
-        const f = e.target.files[0]; if(!f) return;
-        const r = new FileReader();
-        r.onload = () => { const data = r.result; logoImg.src = data; try{localStorage.setItem('asas_logo_datauri', data);}catch(err){} };
-        r.readAsDataURL(f);
-      });
-    }
-    // Fallback-logo (SVG) als er nog niets staat
-    const LOGO_FALLBACK = `data:image/svg+xml;utf8,
-    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
-      <defs><pattern id='pp2' width='10' height='10' patternUnits='userSpaceOnUse'>
-        <path d='M0 5 Q2.5 0 5 5 T10 5 M5 0 Q0 2.5 5 5 T5 10' fill='none' stroke='%23d4b259' stroke-width='1.2' stroke-linecap='round'/>
-      </pattern></defs>
-      <path d='M100 12c34 0 62 28 62 62v92H38V74C38 40 66 12 100 12Z' fill='url(%23pp2)'/>
-      <path d='M100 12c34 0 62 28 62 62v92H38V74C38 40 66 12 100 12Z' fill='none' stroke='%230f2a3a' stroke-width='10'/>
-      <circle cx='100' cy='58' r='12' fill='%230f2a3a'/>
-      <path d='M108 66c-16 6-26 26-34 52l18-14 7 18c8-20 14-34 28-48l-19-8Z' fill='%230f2a3a'/>
-    </svg>`;
-    if (logoImg && !logoImg.src) { logoImg.src = LOGO_FALLBACK; }
   </script>
 </body>
 </html>
